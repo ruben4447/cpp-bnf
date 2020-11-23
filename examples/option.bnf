@@ -1,0 +1,5 @@
+<bit> ::= 0 | 1
+<bits> ::= <bit> <bits> | <bit>
+
+<prefix> ::= 0b | ""
+<binary> ::= <prefix> <bits>

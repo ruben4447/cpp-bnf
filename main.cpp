@@ -4,6 +4,7 @@
 #include "src/classes/environment.cpp"
 #include "src/process.cpp"
 
+// ARGV: [definition_file] [to test] [var to test against]
 int main(int argc, char* argv[]) {
     // Pre-process file ito lines
     std::string def_file(argv[1]);
@@ -17,7 +18,7 @@ int main(int argc, char* argv[]) {
     std::string subject(argv[2]); // What to test
     std::vector<std::string> fail_msgs; // Vector containing error messages (if fail)
     std::vector<std::string> matches; // Vector containing matches
-    bool success = env.match(subject, "decl", fail_msgs, matches);
+    bool success = env.match(subject, std::string(argv[3]), fail_msgs, matches);
 
     std::cout << "Success: " << success << std::endl;
     std::cout << "Left over: `" << subject << "`" << std::endl;
