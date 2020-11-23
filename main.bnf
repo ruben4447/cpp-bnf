@@ -1,3 +1,0 @@
-@include <std>
-
-<decl> ::= <letter> <space> = <space> <digit>
